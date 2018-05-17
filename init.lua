@@ -68,7 +68,7 @@ local function create_comboblock(new_slab)
 			local function registered_comboblocks(new_slab, v2, v1_tiles, v2_tiles, v1_def, v2_def, v1_groups)
 				minetest.register_node("comboblock:"..new_slab:split(":")[2].."_onc_"..v2:split(":")[2], {
 					description = v1_def.description.." on "..v2_def.description,
-					drop = v1_def.drop,
+					drop =  v1_def.drop or new_slab,
 					tiles = {v1_tiles[1], v2_tiles[2],
 							v1_tiles[3].."^[lowpart:50:"..v2_tiles[3],
 							v1_tiles[4].."^[lowpart:50:"..v2_tiles[4],
